@@ -21,8 +21,8 @@ jobs:
 
       - name: Create 100 tags
         run: |
-          for i in $(seq 0 99); do
-            tag="3.0.$i"
+          for i in $(seq 0 1000); do
+            tag="5.0.$i"
             git tag $tag
             echo "Created tag: $tag"
           done
