@@ -1,7 +1,7 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
-run-name: CI
+name: Create Tag
+run-name: Create Tag
 #
 # Controls when the workflow will run
 on:
