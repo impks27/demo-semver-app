@@ -45,5 +45,5 @@ jobs:
 
       # Step 3: Use the generated version in the application
       - name: Print Generated Version
-        run: echo "Generated Version: ${{ steps.semantic-version.outputs.version }}"
-          
+        run: |
+           echo "Generated Version: ${{ steps.semantic-version.outputs.version }}"  
