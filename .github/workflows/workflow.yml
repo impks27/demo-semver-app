@@ -48,7 +48,7 @@ jobs:
         run: |
            echo "Generated Version: ${{ steps.semantic-version.outputs.version }}"  
 
-      - uses: rickstaa/action-create-tag@vX.Y.Z
+      - uses: rickstaa/action-create-tag@v1
         with:
           tag: ${{ steps.semantic-version.outputs.version }}
           message: "Release ${{ steps.semantic-version.outputs.version }}"
