@@ -48,7 +48,13 @@ jobs:
         run: |
            echo "Generated Version: ${{ steps.semantic-version.outputs.version }}"  
 
-      - uses: P4dr4/create-git-tag-action@v1.0.0
+      - name: Create tag
+        uses: actions/github-script@v5
         with:
-          tag: ${{ steps.semantic-version.outputs.version }}
-          message: "Release ${{ steps.semantic-version.outputs.version }}"
+          script: |
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: 'refs/tags/' + "${{ steps.semantic-version.outputs.version }}",
+              sha: context.sha
+            })
